@@ -1,4 +1,4 @@
-use testing::{Api, Credentials, Grade};
+use spaggiari_voti::{Api, Credentials, Grade};
 use std::collections::HashMap;
 use std::io;
 use std::str::FromStr;
