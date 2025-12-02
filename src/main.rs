@@ -8,8 +8,7 @@ use std::time::Duration;
 pub async fn main() {
     // ----- INIT -----
     bees::init(Duration::from_millis(700));
-    dotenvy::dotenv().unwrap();
-
+    
     let uid: String;
     let password: String;
     // load env variables from .env
@@ -17,6 +16,7 @@ pub async fn main() {
     
     match mode {
         1 => {
+            dotenvy::dotenv().unwrap();
             uid = dotenvy::var("UID").expect("FATAL: UID .env variable is missing");
             password = dotenvy::var("PASSWORD").expect("FATAL: PASSWORD .env variable is missing");
         },
