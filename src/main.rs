@@ -65,8 +65,8 @@ where
         println!("{}", call);
         io::stdin().read_line(&mut buffer).expect("FATAL: couldn't read from stdin");
     
-        match buffer.parse::<T>() {
-            Ok(parsed) => {
+        match buffer.trim().parse::<T>() {
+            Ok(parsed) => { 
                 if !validate(&parsed) {
                     println!("Please input a valid input:");
                     continue;
